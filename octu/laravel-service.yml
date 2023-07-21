@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-service
+spec:
+  type: NodePort
+  selector:
+    app: laravel-nginx-ope-cache
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 8080
+
+
+
+# for ths cloud deployment
+
+#   apiVersion: v1
+#   kind: Service
+#   metadata:
+#     name: laravel-service
+#   spec:
+#     type: LoadBalancer
+#     selector:
+#       app: laravel-nginx-ope-cache
+#     ports:
+#       - protocol: TCP
+#         port: 9000
+#         targetPort: 8080
+
